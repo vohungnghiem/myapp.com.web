@@ -1,0 +1,12 @@
+.table td,
+.table th {
+    padding: 5px;
+}
+
+.img {
+    width: 30px !important;
+}
+
+img {
+    max-width: 100% !important;
+}
