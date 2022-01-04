@@ -1,0 +1,14 @@
+@charset "UTF-8";
+:root {
+    --color-backgroud: rgb(237, 240, 244);
+    --color-white: rgb(255, 255, 255);
+    --color-nav: rgb(4, 170, 109);
+    --color-border: #ededed;
+    --color-text: rgba(45, 55, 72);
+    --color-text-opa: rgba(45, 55, 72, 0.1);
+    --color-text-opa-half: rgba(45, 55, 72, 0.9);
+    --color-box-shadown: rgba(40, 42, 53, 0.1);
+}
+
+@import 'navbar-main';
+@import 'home-page';

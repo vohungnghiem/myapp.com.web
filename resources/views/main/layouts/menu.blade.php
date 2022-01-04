@@ -1,54 +1,39 @@
-@php
-    $menu = DB::table('vhn_menu')->where('stt', '=', '1')->orderBy('id','asc')->get();
-    function showmenu($item) {
-        $showmenu = '';
-        if (App::getLocale() == 'vi') {
-            $showmenu = $item->ten;
-        }else{
-            $os = array(2,3,4);
-            if (!in_array($item->id, $os)) {
-                $showmenu = $item->tenjp;
-            }
-        }
-        return $showmenu;
-    }
-@endphp
-<header>
-    <div class="top-header">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 flex-box">
-                    <div class="logo"><a href="#"><img src="main_template/img/logo.png" alt="logo"></a></div>
-                    <div class="hamburger"></div>
-                    <nav class="header-nav">
-                        <li><a class="active" href="/">@lang('main.trangchu')</a></li>
-						<li><a href="/gioithieu">@lang('main.gioithieu')</a></li>
-                        @foreach ($menu as $item)
-							<li><a href="{{$item->link}}">{{showmenu($item)}}</a></li>
-						@endforeach
-                        @foreach (Config::get('languages') as $lang => $language)
-                            @if ($language['status'] == 1)
-                                <li><a href="{{ route('lang.switch', $lang) }}"><img src="main_template/img/flag{{ $language['flag-icon'] }}.png" alt="flag{{ $language['flag-icon'] }}.png"></a></li>
-                            @endif
-                        @endforeach
-                    </nav>
-                </div>
-            </div>
+<header class="page-header" id="navbar">
+    <nav class="nav container">
+        <div class="nav-mobile">
+            <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
         </div>
-    </div>
-    <div class="nav-mobile">
-        <nav>
-            <li>
-                @foreach (Config::get('languages') as $lang => $language)
-                    @if ($language['status'] == 1)
-                        <a href="{{ route('lang.switch', $lang) }}"><img
-                                src="main_template/img/flag{{ $language['flag-icon'] }}.png" alt="flag{{ $language['flag-icon'] }}.png"></a>
-                    @endif
-                @endforeach
+        <a href="" class="brand">
+            <img class="logo horizontal-logo" src="main_template/image/logo/logo.png" alt="forecastr logo">
+        </a>
+        <ul class="top-menu">
+            <li class="sub-menu">
+                <a class="dropbtn">Languages <i class="fas fa-chevron-down"></i></a>
+                <div class="dropdown-content">
+                    <a href="#html">HTML</a>
+                    <a href="#css">CSS</a>
+                </div>
             </li>
-            @foreach ($menu as $item)
-                <li><a href="{{$item->link}}">{{showmenu($item)}}</a></li>
-            @endforeach
-        </nav>
-    </div>
+            <li class="sub-menu">
+                <a class="dropbtn">Languages <i class="fas fa-chevron-down"></i></a>
+                <div class="dropdown-content">
+                    <a href="#html">HTML</a>
+                    <a href="#css">CSS</a>
+                </div>
+            </li>
+            <li><a href="#home">Welcome</a></li>
+
+            <li><a href="#news">About us</a></li>
+
+        </ul>
+        <div class="search has_s">
+            <i class="fas fa-search"></i>
+        </div>
+        <form action="/search" method="get" class="search-form ">
+            <div>
+                <input type="text" name="search" placeholder="search ...">
+                <button type="submit" class="btn-search"><i class="fas fa-search"></i></button>
+            </div>
+        </form>
+    </nav>
 </header>
