@@ -75,20 +75,38 @@ function indexCategories($categories, $parent_id = 0, $char = '|---',$id)
     }
 }
 // category dequy
-function editCategoriesSelected($categories, $parent_id = 0, $char = '',$id)
+// function editCategoriesSelected($categories, $parent_id = 0, $char = '',$id)
+// {
+//     foreach ($categories as $key => $item)
+//     {
+//         if ($item->parent == $parent_id)
+//         {
+//             if ($item->id == $id)
+//             {
+//                 echo '<p class="current">'.$char . $item->name.'</p>';
+//             }else{
+//                 echo '<p>'.$char . $item->name.'</p>';
+//             }
+
+//             editCategoriesSelected($categories, $item->id, $char.'<i class="fas fa-ellipsis-h"></i> &nbsp;',$id);
+//         }
+//     }
+// }
+
+function deQuySelected($categories, $parent_id = 0, $char = '',$id)
 {
     foreach ($categories as $key => $item)
     {
-        if ($item->parent == $parent_id)
+        if ($item->id_parent == $parent_id)
         {
             if ($item->id == $id)
             {
-                echo '<p class="current">'.$char . $item->name.'</p>';
+                echo '<a href='.$item->slug.'">'.$char.$item->name.'</a>';
             }else{
-                echo '<p>'.$char . $item->name.'</p>';
+                echo $char . $item->name.'&nbsp;&nbsp;';
             }
 
-            editCategoriesSelected($categories, $item->id, $char.'<i class="fas fa-ellipsis-h"></i> &nbsp;',$id);
+            deQuySelected($categories, $item->id, $char.'<i class="fas fa-ellipsis-h"></i> &nbsp;',$id);
         }
     }
 }

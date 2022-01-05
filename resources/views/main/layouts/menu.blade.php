@@ -8,10 +8,10 @@
         </a>
         <ul class="top-menu">
             <li class="sub-menu">
-                <a class="dropbtn">Languages <i class="fas fa-chevron-down"></i></a>
+                <a class="dropbtn">php <i class="fas fa-chevron-down"></i></a>
                 <div class="dropdown-content">
-                    <a href="#html">HTML</a>
-                    <a href="#css">CSS</a>
+                    <a href="category">php cơ bản</a>
+                    <a href="category">laravel 8</a>
                 </div>
             </li>
             <li class="sub-menu">

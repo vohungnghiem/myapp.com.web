@@ -227,9 +227,7 @@ dl {
 }
 .home-page .ol .container-li {
   position: relative;
-  background-color: var(--color-white);
   margin-left: 20px;
-  padding: 15px;
   margin-top: 40px;
   box-shadow: 0px 2px 4px -1px var(--color-box-shadown);
 }
@@ -244,26 +242,31 @@ dl {
   border-radius: 30px;
   border: 5px solid var(--color-white);
 }
-.home-page .ol .container-li .container-item .h2-title {
+.home-page .ol .container-li .container-wrap {
+  background-color: var(--color-white);
+  padding: 15px;
+  margin-top: 15px;
+}
+.home-page .ol .container-li .container-wrap .container-item .h2-title {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
   line-height: 1;
 }
-.home-page .ol .container-li .container-item .h2-title span a {
+.home-page .ol .container-li .container-wrap .container-item .h2-title span a {
   font-size: 18px;
   color: var(--color-text);
   text-decoration: none;
 }
-.home-page .ol .container-li .container-item .h2-title span a:hover {
+.home-page .ol .container-li .container-wrap .container-item .h2-title span a:hover {
   color: var(--color-nav);
 }
-.home-page .ol .container-li .container-item .p-cat a {
+.home-page .ol .container-li .container-wrap .container-item .p-cat a {
   color: var(--color-text);
   word-wrap: break-word;
   word-break: break-word;
 }
-.home-page .ol .container-li .container-item .icon {
+.home-page .ol .container-li .container-wrap .container-item .icon {
   position: absolute;
   left: -40px;
   top: 25px;
@@ -271,16 +274,16 @@ dl {
   padding: 5px 7px;
   border-radius: 50px;
 }
-.home-page .ol .container-li .container-item .icon i {
+.home-page .ol .container-li .container-wrap .container-item .icon i {
   font-size: 20px;
 }
-.home-page .ol .container-li .p-des {
+.home-page .ol .container-li .container-wrap .p-des {
   color: var(--color-text-opa-half);
 }
-.home-page .ol .container-li .p-foot {
+.home-page .ol .container-li .container-wrap .p-foot {
   color: var(--color-text-opa-half);
 }
-.home-page .ol .container-li .p-foot span {
+.home-page .ol .container-li .container-wrap .p-foot span {
   margin-right: 20px;
 }
 

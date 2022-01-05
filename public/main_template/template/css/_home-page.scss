@@ -5,9 +5,7 @@
         border-left: 4px solid var(--color-text-opa);
         .container-li {
             position: relative;
-            background-color: var(--color-white);
             margin-left: 20px;
-            padding: 15px;
             margin-top: 40px;
             box-shadow: 0px 2px 4px -1px var(--color-box-shadown);
             .time {
@@ -21,49 +19,54 @@
                 border-radius: 30px;
                 border: 5px solid var(--color-white);
             }
-            .container-item {
-                .h2-title {
-                    white-space: nowrap;
-                    text-overflow: ellipsis;
-                    overflow: hidden;
-                    line-height: 1;
-                    span {
-                        a {
-                            font-size: 18px;
-                            color: var(--color-text);
-                            text-decoration: none;
-                            &:hover {
-                                color: var(--color-nav);
+            .container-wrap {
+                background-color: var(--color-white);
+                padding: 15px;
+                margin-top: 15px;
+                .container-item {
+                    .h2-title {
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        line-height: 1;
+                        span {
+                            a {
+                                font-size: 18px;
+                                color: var(--color-text);
+                                text-decoration: none;
+                                &:hover {
+                                    color: var(--color-nav);
+                                }
                             }
                         }
                     }
-                }
-                .p-cat {
-                    a {
-                        color: var(--color-text);
-                        word-wrap: break-word;
-                        word-break: break-word;
+                    .p-cat {
+                        a {
+                            color: var(--color-text);
+                            word-wrap: break-word;
+                            word-break: break-word;
+                        }
+                    }
+                    .icon {
+                        position: absolute;
+                        left: -40px;
+                        top: 25px;
+                        background-color: var(--color-white);
+                        padding: 5px 7px;
+                        border-radius: 50px;
+                        i {
+                            font-size: 20px;
+                        }
                     }
                 }
-                .icon {
-                    position: absolute;
-                    left: -40px;
-                    top: 25px;
-                    background-color: var(--color-white);
-                    padding: 5px 7px;
-                    border-radius: 50px;
-                    i {
-                        font-size: 20px;
-                    }
+                .p-des {
+                    color: var(--color-text-opa-half);
                 }
-            }
-            .p-des {
-                color: var(--color-text-opa-half);
-            }
-            .p-foot {
-                color: var(--color-text-opa-half);
-                span {
-                    margin-right: 20px;
+                .p-foot {
+                    color: var(--color-text-opa-half);
+                    span {
+                        margin-right: 20px;
+                    }
                 }
             }
         }

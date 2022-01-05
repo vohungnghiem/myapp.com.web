@@ -6,133 +6,45 @@
 
     <section class="container mt-5 page home-page">
         <div class="ol">
+            @foreach ($posts as $post)
             <div class="container-li">
-                <div class="time">Yesterday</div>
-                <div class="container-item">
-                    <h2 class="h2-title">
-                        <span><a href="">aaaaaaaaa bbbbbb cccccccc ddddd aaaaaaaaa bbbbbb cccccccc ddddd aaaaaaaaa bbbbbb cccccccc ddddd aaaaaaaaa bbbbbb cccccccc ddddd</a></span>
-                    </h2>
-                    <p class="p-cat"><a href="">category</a></p>
-                    <div class="icon"><i class="fas fa-comment"></i></div>
-                </div>
-                <p class="p-des">
-                    Hendrerit ipsa natus. Molestiae, suscipit porro, phasellus commodo. Euismod eiusmod ante nec adipiscing error excepteur sed aptent praesent iste voluptates phasellus eaque ipsam culpa maecenas nostra turpis rem dictum ducimus, eius adipisci
-                </p>
-                <p class="p-foot">
-                    <span>
-                        <i class="far fa-clock"></i> 15 hours ago
-                    </span>
-                    <span>
-                        <i class="fas fa-comment"></i> 5 Comments
-                    </span>
-                </p>
+                <div class="time">{{date('Y-m-d', strtotime($post->created_at))}}</div>
+                @isset($post->seppost)
+                    @foreach (explode("||",$post->seppost) as $item)
+                    @php $p = explode("__",$item); @endphp
+                    <div class="container-wrap">
+                    <div class="container-item">
+                        <h2 class="h2-title">
+                            <span><a href="{{$p[1]}}">{{$p[2]}}</a></span>
+                        </h2>
+                        <p class="p-cat">
+                            {{deQuySelected($categories,0,'',$p[0])}}
+                        </p>
+                        <div class="icon"><i class="fas fa-comment"></i></div>
+                    </div>
+                    <p class="p-des">
+                        {{$p[3]}}
+                    </p>
+                    <p class="p-foot">
+                        <span>
+                            <i class="far fa-clock"></i> {{$p[4]}}
+                        </span>
+                        <span>
+                            <i class="fas fa-comment"></i> 0 Comments
+                        </span>
+                    </p>
+                    </div>
+                    @endforeach
+                @endisset
+
             </div>
-            <div class="container-li">
-                <div class="time">Yesterday</div>
-                <div class="container-item">
-                    <h2 class="h2-title">
-                        <span><a href="">aaaaaaaaa bbbbbb cccccccc ddddd aaaaaaaaa bbbbbb cccccccc ddddd aaaaaaaaa bbbbbb cccccccc ddddd aaaaaaaaa bbbbbb cccccccc ddddd</a></span>
-                    </h2>
-                    <p class="p-cat"><a href="">category</a></p>
-                    <div class="icon"><i class="fas fa-comment"></i></div>
-                </div>
-                <p class="p-des">
-                    Hendrerit ipsa natus. Molestiae, suscipit porro, phasellus commodo. Euismod eiusmod ante nec adipiscing error excepteur sed aptent praesent iste voluptates phasellus eaque ipsam culpa maecenas nostra turpis rem dictum ducimus, eius adipisci
-                </p>
-                <p class="p-foot">
-                    <span>
-                        <i class="far fa-clock"></i> 15 hours ago
-                    </span>
-                    <span>
-                        <i class="fas fa-comment"></i> 5 Comments
-                    </span>
-                </p>
-            </div>
-            <div class="container-li">
-                <div class="time">Yesterday</div>
-                <div class="container-item">
-                    <h2 class="h2-title">
-                        <span><a href="">aaaaaaaaa bbbbbb cccccccc ddddd aaaaaaaaa bbbbbb cccccccc ddddd aaaaaaaaa bbbbbb cccccccc ddddd aaaaaaaaa bbbbbb cccccccc ddddd</a></span>
-                    </h2>
-                    <p class="p-cat"><a href="">category</a></p>
-                    <div class="icon"><i class="fas fa-comment"></i></div>
-                </div>
-                <p class="p-des">
-                    Hendrerit ipsa natus. Molestiae, suscipit porro, phasellus commodo. Euismod eiusmod ante nec adipiscing error excepteur sed aptent praesent iste voluptates phasellus eaque ipsam culpa maecenas nostra turpis rem dictum ducimus, eius adipisci
-                </p>
-                <p class="p-foot">
-                    <span>
-                        <i class="far fa-clock"></i> 15 hours ago
-                    </span>
-                    <span>
-                        <i class="fas fa-comment"></i> 5 Comments
-                    </span>
-                </p>
-            </div>
-            <div class="container-li">
-                <div class="time">Yesterday</div>
-                <div class="container-item">
-                    <h2 class="h2-title">
-                        <span><a href="">aaaaaaaaa bbbbbb cccccccc ddddd aaaaaaaaa bbbbbb cccccccc ddddd aaaaaaaaa bbbbbb cccccccc ddddd aaaaaaaaa bbbbbb cccccccc ddddd</a></span>
-                    </h2>
-                    <p class="p-cat"><a href="">category</a></p>
-                    <div class="icon"><i class="fas fa-comment"></i></div>
-                </div>
-                <p class="p-des">
-                    Hendrerit ipsa natus. Molestiae, suscipit porro, phasellus commodo. Euismod eiusmod ante nec adipiscing error excepteur sed aptent praesent iste voluptates phasellus eaque ipsam culpa maecenas nostra turpis rem dictum ducimus, eius adipisci
-                </p>
-                <p class="p-foot">
-                    <span>
-                        <i class="far fa-clock"></i> 15 hours ago
-                    </span>
-                    <span>
-                        <i class="fas fa-comment"></i> 5 Comments
-                    </span>
-                </p>
-            </div>
-            <div class="container-li">
-                <div class="time">Yesterday</div>
-                <div class="container-item">
-                    <h2 class="h2-title">
-                        <span><a href="">aaaaaaaaa bbbbbb cccccccc ddddd aaaaaaaaa bbbbbb cccccccc ddddd aaaaaaaaa bbbbbb cccccccc ddddd aaaaaaaaa bbbbbb cccccccc ddddd</a></span>
-                    </h2>
-                    <p class="p-cat"><a href="">category</a></p>
-                    <div class="icon"><i class="fas fa-comment"></i></div>
-                </div>
-                <p class="p-des">
-                    Hendrerit ipsa natus. Molestiae, suscipit porro, phasellus commodo. Euismod eiusmod ante nec adipiscing error excepteur sed aptent praesent iste voluptates phasellus eaque ipsam culpa maecenas nostra turpis rem dictum ducimus, eius adipisci
-                </p>
-                <p class="p-foot">
-                    <span>
-                        <i class="far fa-clock"></i> 15 hours ago
-                    </span>
-                    <span>
-                        <i class="fas fa-comment"></i> 5 Comments
-                    </span>
-                </p>
-            </div>
-            <div class="container-li">
-                <div class="time">Yesterday</div>
-                <div class="container-item">
-                    <h2 class="h2-title">
-                        <span><a href="">aaaaaaaaa bbbbbb cccccccc ddddd aaaaaaaaa bbbbbb cccccccc ddddd aaaaaaaaa bbbbbb cccccccc ddddd aaaaaaaaa bbbbbb cccccccc ddddd</a></span>
-                    </h2>
-                    <p class="p-cat"><a href="">category</a></p>
-                    <div class="icon"><i class="fas fa-comment"></i></div>
-                </div>
-                <p class="p-des">
-                    Hendrerit ipsa natus. Molestiae, suscipit porro, phasellus commodo. Euismod eiusmod ante nec adipiscing error excepteur sed aptent praesent iste voluptates phasellus eaque ipsam culpa maecenas nostra turpis rem dictum ducimus, eius adipisci
-                </p>
-                <p class="p-foot">
-                    <span>
-                        <i class="far fa-clock"></i> 15 hours ago
-                    </span>
-                    <span>
-                        <i class="fas fa-comment"></i> 5 Comments
-                    </span>
-                </p>
-            </div>
+            @endforeach
         </div>
     </section>
 @endsection
+@push('styles')
 
+@endpush
+@push('scripts')
+
+@endpush
