@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 22, 2021 lúc 02:42 AM
+-- Thời gian đã tạo: Th1 07, 2022 lúc 08:58 AM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 7.4.25
 
@@ -297,11 +297,9 @@ CREATE TABLE `vhn_categories` (
 --
 
 INSERT INTO `vhn_categories` (`id`, `name`, `slug`, `id_parent`, `description`, `image`, `sort`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'TÔI HỌC PHP', 'toi-hoc-php', 0, 'Tôi học PHP', '/storage/photos/2/none.png', 1, 1, '2021-11-16 02:50:31', '2021-11-17 20:29:02'),
+(1, 'PHP', 'php', 0, 'Tôi học PHP', '/storage/photos/2/none.png', 1, 1, '2021-11-16 02:50:31', '2022-01-04 19:58:16'),
 (2, 'LARAVEL 8', 'laravel-8', 1, 'Tôi học laravel 8', '/storage/photos/2/shutterstock_1458128810.jpg', 1, 1, '2021-11-16 02:59:34', '2021-11-17 20:35:23'),
-(3, 'cat 1 2', 'cat-1-2', 4, 'cate 1 2', '/storage/photos/2/shutterstock_1458128810.jpg', 1, 0, '2021-11-16 21:37:52', '2021-11-17 02:03:21'),
-(4, 'cate 2', 'cate-2', 0, NULL, '/storage/photos/2/none.png', 1, 0, '2021-11-17 01:59:50', '2021-11-17 02:55:30'),
-(5, 'cate 2 1', 'cate-2-1', 4, NULL, '/storage/photos/2/logo.png', 1, 0, '2021-11-17 02:00:05', '2021-11-17 02:56:07');
+(6, 'CodeIgniter', 'codeigniter', 1, NULL, NULL, 1, 1, '2022-01-07 01:53:18', '2022-01-07 01:53:18');
 
 -- --------------------------------------------------------
 
@@ -314,7 +312,7 @@ CREATE TABLE `vhn_posts` (
   `id_category` int(10) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `caption` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `caption` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT ' ',
   `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `link` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `content` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -332,7 +330,10 @@ CREATE TABLE `vhn_posts` (
 --
 
 INSERT INTO `vhn_posts` (`id`, `id_category`, `name`, `slug`, `caption`, `image`, `link`, `content`, `status`, `sort`, `view`, `description`, `key`, `created_at`, `updated_at`) VALUES
-(1, 2, 'post 1 post 1 44', 'post-1', 'caption a', '/storage/photos/2/shutterstock_1458128810.jpg', 'link', '<p><img src=\"/storage/photos/2/logo.png\" style=\"width: 150px;\"></p>\r\n<p><img src=\"/storage/photos/2/shutterstock_1458128810.jpg\" alt=\"\" width=\"1200\" height=\"730\"></p>', 1, 1, NULL, 'description', 'key', '2021-11-18 00:48:09', '2021-11-18 21:27:30');
+(1, 2, 'post 1 post 1 44', 'post-1', 'caption a', '/storage/photos/2/shutterstock_1458128810.jpg', 'link', '<p><img src=\"/storage/photos/2/logo.png\" style=\"width: 150px;\"></p>\r\n<p><img src=\"/storage/photos/2/shutterstock_1458128810.jpg\" alt=\"\" width=\"1200\" height=\"730\"></p>', 1, 1, NULL, 'description', 'key', '2021-11-18 00:48:09', '2021-11-18 21:27:30'),
+(3, 2, 'post 2', 'post-2', 'caption', '/storage/photos/2/shutterstock_1458128810.jpg', NULL, '<p>post 2</p>', 1, 1, NULL, NULL, NULL, '2022-01-04 19:31:56', '2022-01-04 19:31:56'),
+(4, 2, 'post 3', 'post-3', '', '/storage/photos/2/shutterstock_1458128810.jpg', NULL, '<p>sfsdf</p><p><img src=\"/storage/photos/2/shutterstock_1458128810.jpg\" style=\"width: 1154.5px;\"><br></p>', 1, 1, NULL, NULL, NULL, '2022-01-04 19:33:06', '2022-01-04 19:33:06'),
+(5, 6, 'codeigniter', 'codeigniter', 'aaaaaaaaa', NULL, NULL, '<p>sdfdfsdf sdfsdf</p>', 1, 1, NULL, NULL, NULL, '2022-01-07 01:53:48', '2022-01-07 01:53:48');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -419,6 +420,7 @@ ALTER TABLE `vhn_categories`
 --
 ALTER TABLE `vhn_posts`
   ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `slug` (`slug`),
   ADD KEY `vhn_posts_id_category_foreign` (`id_category`);
 
 --
@@ -465,13 +467,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT cho bảng `vhn_categories`
 --
 ALTER TABLE `vhn_categories`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT cho bảng `vhn_posts`
 --
 ALTER TABLE `vhn_posts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
