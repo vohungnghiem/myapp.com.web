@@ -1,7 +1,8 @@
 .home-page {
     z-index: 1;
     .ol {
-        min-height: 1000px;
+        min-height: 300px;
+        margin-bottom: 15px;
         border-left: 4px solid var(--color-text-opa);
         .container-li {
             position: relative;
@@ -31,7 +32,7 @@
                         line-height: 1;
                         span {
                             a {
-                                font-size: 18px;
+                                font-size: 20px;
                                 color: var(--color-text);
                                 text-decoration: none;
                                 &:hover {
@@ -42,9 +43,14 @@
                     }
                     .p-cat {
                         a {
+                            text-decoration: none;
+                            font-weight: bold;
                             color: var(--color-text);
                             word-wrap: break-word;
                             word-break: break-word;
+                            &:hover {
+                                color: var(--color-nav);
+                            }
                         }
                     }
                     .icon {
@@ -65,6 +71,8 @@
                 .p-foot {
                     color: var(--color-text-opa-half);
                     span {
+                        font-size: 14px;
+                        font-weight: 600;
                         margin-right: 20px;
                     }
                 }

@@ -8,7 +8,7 @@
     <link rel="icon" href="main_template/image/logo/logo.png?v=" type="image/png" sizes="16x16">
     <link rel="stylesheet" href="main_template/plugins/font-awesome/css/all.css">
     <link rel="stylesheet" href="main_template/plugins/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="main_template/template/css/index.css?v=3001">
+    <link rel="stylesheet" href="main_template/template/css/index.css?v={{time()}}">
     <title>@yield('title')</title>
     @stack('styles')
     <meta name="keywords"

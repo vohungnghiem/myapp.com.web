@@ -101,9 +101,9 @@ function deQuySelected($categories, $parent_id = 0, $char = '',$id)
         {
             if ($item->id == $id)
             {
-                echo '<a href='.$item->slug.'">'.$char.$item->name.'</a>';
+                echo '<a href='.$item->slug.'>'.$char.$item->name.'</a>';
             }else{
-                echo $char . $item->name.'&nbsp;&nbsp;';
+                // echo $char . $item->name.'&nbsp;&nbsp;';
             }
 
             deQuySelected($categories, $item->id, $char.'<i class="fas fa-ellipsis-h"></i> &nbsp;',$id);
