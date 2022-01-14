@@ -72,14 +72,14 @@ $(document).ready(function () {
                             '</h2>'+
                             '<p class="p-cat">'+
                                 '<span class="cat" hcat="'+p[1]+'"><i class="fas fa-file-export"></i></span>'+
-                                '<a href="'+p[1]+'"><i class="fas fa-ellipsis-h"></i>'+ p[0]+'</a>'+
+                                '<a href="'+p[1]+'"> <i class="fas fa-ellipsis-h"></i>'+ p[0]+'</a>'+
                             '</p>'+
-                        ' <div class="icon"><i class="fas fa-comment"></i></div>'+
+                        ' <div class="icon"> <i class="fas fa-comment"></i></div>'+
                         '</div>'+
                         '<p class="p-des">'+p[4]+'</p>'+
                         '<p class="p-foot">'+
                             '<span>'+
-                                '<i class="far fa-clock"></i>'+ p[5]+
+                                ' <i class="far fa-clock"> </i> &nbsp;'+ p[5]+
                             '</span>'+
                             '<span>'+
                                 '<i class="fas fa-comment"></i> 0 Comments'+
